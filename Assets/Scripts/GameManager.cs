@@ -27,15 +27,15 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void RestartLevel(float delay)
+    public void RestartLevel(float delay, string scene)
     {
-        StartCoroutine(RestartLevelDelay(delay));
+        StartCoroutine(RestartLevelDelay(delay, scene));
     }
 
-    private IEnumerator RestartLevelDelay(float delay)
+    private IEnumerator RestartLevelDelay(float delay, string scene)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(scene);
     }
 
     // Update is called once per frame
